@@ -5,11 +5,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cristiand.proyectoasistencia.RecuperarPassController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cristiand.proyectoasistencia.RecuperarPassController">
    <children>
       <Button fx:id="BtnBuscarUsuario" layoutX="361.0" layoutY="68.0" mnemonicParsing="false" onAction="#onBuscarUsuarioClick" text="Buscar" />
       <TextField fx:id="txtCampoUsuario" layoutX="191.0" layoutY="68.0" onAction="#onBuscarUsuarioClick" />
       <Label layoutX="187.0" layoutY="34.0" text="Ingrese el nombre del usuario" />
+      <Label fx:id="LblPregunta" layoutX="231.0" layoutY="131.0" text="------------------" />
+      <TextField fx:id="txtCampoRespuesta" layoutX="191.0" layoutY="175.0" onAction="#onIngresarRespuestaClick" />
+      <Label layoutX="74.0" layoutY="179.0" text="Respuesta Secreta" />
+      <Button fx:id="btnIngresarRespuesta" layoutX="361.0" layoutY="175.0" mnemonicParsing="false" onAction="#onIngresarRespuestaClick" text="Ingresar" />
    </children>
 </AnchorPane>
