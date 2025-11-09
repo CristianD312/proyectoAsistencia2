@@ -75,8 +75,6 @@ public class UsuarioDAO {
         return usuario;
     }
 
-
-
     private void cerrarRecursos(Connection conn, PreparedStatement statement, ResultSet resultSet) {
         try {
             if (resultSet != null) resultSet.close();

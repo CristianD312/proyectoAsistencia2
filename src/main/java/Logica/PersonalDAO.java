@@ -29,7 +29,7 @@ public class PersonalDAO {
 
             statement.setString(1, personal.getNombre());
             statement.setString(2, personal.getApellido());
-            statement.setInt(3, personal.getDni());
+            statement.setInt(3, personal.getCUIL());
             statement.setString(4, personal.getCargo());
 
             int filasAfectadas = statement.executeUpdate();
@@ -101,13 +101,13 @@ public class PersonalDAO {
             resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
-                int idProfe = resultSet.getInt("id_profe");
+                int idPersonal = resultSet.getInt("id_personal");
                 String nombre = resultSet.getString("nombre");
                 String apellido = resultSet.getString("apellido");
-                int dniResult = resultSet.getInt("dni");
+                int CUIL = resultSet.getInt("CUIL");
                 String cargo = resultSet.getString("cargo");
 
-                personal = new Personal(idProfe, nombre, apellido, dniResult, cargo);
+                personal = new Personal(idPersonal, nombre, apellido, CUIL, cargo);
             }
 
         } catch (SQLException ex) {
@@ -136,13 +136,13 @@ public class PersonalDAO {
             resultSet = statement.executeQuery();
 
             while (resultSet.next()) {
-                int idProfe = resultSet.getInt("id_profe");
+                int idPersonal = resultSet.getInt("id_personal");
                 String nombre = resultSet.getString("nombre");
                 String apellido = resultSet.getString("apellido");
-                int dni = resultSet.getInt("dni");
+                int CUIL = resultSet.getInt("CUIL");
                 String cargo = resultSet.getString("cargo");
 
-                listaPersonal.add(new Personal(idProfe, nombre, apellido, dni, cargo));
+                listaPersonal.add(new Personal(idPersonal, nombre, apellido, CUIL, cargo));
             }
 
         } catch (SQLException ex) {
@@ -209,9 +209,9 @@ public class PersonalDAO {
 
             statement.setString(1, personal.getNombre());
             statement.setString(2, personal.getApellido());
-            statement.setInt(3, personal.getDni());
+            statement.setInt(3, personal.getCUIL());
             statement.setString(4, personal.getCargo());
-            statement.setInt(5, personal.getId_profe());
+            statement.setInt(5, personal.getId_personal());
 
             int filasAfectadas = statement.executeUpdate();
             return filasAfectadas > 0;

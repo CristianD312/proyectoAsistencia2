@@ -73,7 +73,7 @@ public class GestorPersonalController {
     private void configurarTabla() {
         colID.setCellValueFactory(cellData -> {
             Personal personal = cellData.getValue();
-            return new SimpleIntegerProperty(personal.getId_profe()).asObject();
+            return new SimpleIntegerProperty(personal.getId_personal()).asObject();
         });
 
         colNombre.setCellValueFactory(cellData -> {
@@ -88,7 +88,7 @@ public class GestorPersonalController {
 
         colDNI.setCellValueFactory(cellData -> {
             Personal personal = cellData.getValue();
-            return new SimpleIntegerProperty(personal.getDni()).asObject();
+            return new SimpleIntegerProperty(personal.getCUIL()).asObject();
         });
 
         colCargo.setCellValueFactory(cellData -> {
@@ -116,7 +116,7 @@ public class GestorPersonalController {
     private void cargarDatosEnCampos(Personal personal) {
         txtCampoNombre.setText(personal.getNombre());
         txtCampoApellido.setText(personal.getApellido());
-        txtCampoDni.setText(String.valueOf(personal.getDni()));
+        txtCampoDni.setText(String.valueOf(personal.getCUIL()));
         txtCampoCargo.setText(personal.getCargo());
     }
 
@@ -206,7 +206,7 @@ public class GestorPersonalController {
             // Actualizar objeto
             personalSeleccionado.setNombre(nombre);
             personalSeleccionado.setApellido(apellido);
-            personalSeleccionado.setDni(dni);
+            personalSeleccionado.setCUIL(dni);
             personalSeleccionado.setCargo(cargo);
 
             // Actualizar en BD
@@ -235,7 +235,7 @@ public class GestorPersonalController {
         // Confirmación (opcional pero recomendado)
         // Aquí podrías agregar un Alert de confirmación
 
-        if (personalDAO.eliminar(personalSeleccionado.getId_profe())) {
+        if (personalDAO.eliminar(personalSeleccionado.getId_personal())) {
             gestor.mostrarExito("Personal eliminado exitosamente");
             limpiarCampos();
             cargarTabla();
