@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="777.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cristiand.proyectoasistencia.GestorMateriaController">
+    <children>
+        <Button fx:id="btnCargar" layoutX="76.0" layoutY="478.0" mnemonicParsing="false" onAction="#onCargarMateriaClick" prefHeight="42.0" prefWidth="76.0" text="Cargar" />
+        <Button fx:id="btnActualizar" layoutX="169.0" layoutY="479.0" mnemonicParsing="false" onAction="#onActualizarMateriaClick" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Actualizar" />
+        <Button fx:id="btnEliminar" layoutX="284.0" layoutY="479.0" mnemonicParsing="false" onAction="#onEliminarMateriaClick" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Eliminar" />
+        <Button fx:id="btnLimpiar" layoutX="124.0" layoutY="544.0" mnemonicParsing="false" onAction="#onLimpiarCamposClick" prefHeight="40.0" prefWidth="210.0" text="Limpiar Campos" />
+        <TextField fx:id="txtCampoGrupo" layoutX="169.0" layoutY="314.0" onAction="#onCargarMateriaClick" />
+        <TextField fx:id="txtCampoCantidadModulos" layoutX="169.0" layoutY="256.0" onAction="#onCargarMateriaClick" />
+        <TextField fx:id="txtCampoMateria" layoutX="169.0" layoutY="198.0" onAction="#onCargarMateriaClick" />
+        <TextField fx:id="txtCampoOrientacion" layoutX="170.0" layoutY="389.0" onAction="#onCargarPersonalClick" />
+        
+        <TableView fx:id="tablaMateria" layoutX="539.0" layoutY="105.0" prefHeight="473.0" prefWidth="454.0">
+
+
+            <columns>
+                <TableColumn fx:id="colID" prefWidth="59.0" text="id" />
+                <TableColumn fx:id="colMateria" prefWidth="113.0" text="Materia" />
+                <TableColumn fx:id="colCantModulos" prefWidth="94.0" text="Cant. Modulos" />
+                <TableColumn fx:id="colGrupo" prefWidth="94.0" text="Grupo" />
+                <TableColumn fx:id="colOrientacion" prefWidth="93.0" text="Orientacion" />
+            </columns>
+        </TableView>
+      <Label layoutX="184.0" layoutY="169.0" text="Nombre de la Materia:" />
+      <Label layoutX="186.0" layoutY="230.0" text="Cantidad de Modulos" />
+      <Label layoutX="227.0" layoutY="291.0" text="Grupo" />
+
+      <Label layoutX="214.0" layoutY="357.0" text="Orientacion" />
+    </children>
+</AnchorPane>
